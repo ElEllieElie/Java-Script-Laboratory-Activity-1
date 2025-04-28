@@ -1,0 +1,91 @@
+<body>
+    <script text="text/javascript">
+        const mouse_price = 750;
+        const keyboard_price = 1500;
+        const monitor = 12000;
+        const motherboard = 4000;
+        const harddrive = 2800;
+        const table = 1500;
+        let student = prompt("Are you a student? (yes/no)");
+        let product = prompt("Enter Product Name (mouse/keyboard/monitor/motherboard/harddrive/table):");
+        let quantity = prompt("Enter Quantity:");
+        let total_price = 0; // Declare total_price outside the blocks
+
+        // Student Discount Calculation 
+        if (student == "yes") {
+            let discount = 0.05 * quantity;
+            document.write("Student Discount: " + discount);
+        } else if (student == "no") {
+            document.write("No Student Discount");
+        }
+
+        // Product Price Calculation 
+        if (product == "mouse") {
+            total_price = mouse_price * quantity;
+            document.write("<br>Total Payment: " + total_price);
+            if (total_price > 1000) {
+                let discount = total_price * 0.1;
+                total_price = total_price - discount;
+                document.write("<br>Discount: " + discount);
+                document.write("<br>Discount Applied: " + total_price);
+            }
+        } else if (product == "keyboard") {
+            total_price = keyboard_price * quantity;
+            document.write("<br>Total Payment: " + total_price);
+            if (total_price > 2000) {
+                let discount = total_price * 0.15;
+                total_price = total_price - discount;
+                document.write("<br>Discount: " + discount);
+                document.write("<br>Discount Applied: " + total_price);
+            }
+        } else if (product == "monitor") {
+            total_price = monitor * quantity;
+            document.write("<br>Total Payment: " + total_price);
+            if (total_price > 4000) {
+                let discount = total_price * 0.07;
+                total_price = total_price - discount;
+                document.write("<br>Discount: " + discount);
+                document.write("<br>Discount Applied: " + total_price);
+            }
+        } else if (product == "motherboard") {
+            total_price = motherboard * quantity;
+            document.write("<br>Total Payment: " + total_price);
+            if (total_price > 6000) {
+                let discount = total_price * 0.06;
+                total_price = total_price - discount;
+                document.write("<br>Discount: " + discount);
+                document.write("<br>Discount Applied: " + total_price);
+            }
+        } else if (product == "harddrive") {
+            total_price = harddrive * quantity;
+            document.write("<br>Total Payment: " + total_price);
+            if (total_price > 10000) {
+                let discount = total_price * 0.1;
+                total_price = total_price - discount;
+                document.write("<br>Discount: " + discount);
+                document.write("<br>Discount Applied: " + total_price);
+            }
+        } else if (product == "table") {
+            total_price = table * quantity;
+            document.write("Total Payment: " + total_price);
+            if (total_price > 10000) {
+                let discount = total_price * 0.1;
+                total_price = total_price - discount;
+                document.write("<br>Discount: " + discount);
+                document.write("<br>Discount Applied: " + total_price)
+            }
+        } else {
+            document.write("Invalid Product Name");
+        }
+
+        // Tax Calculation -->
+        if (total_price > 5000) {
+            let tax = total_price * 0.08;
+            total_price = total_price + tax;
+            document.write("<br>Tax: " + tax);
+            document.write("<br>Total Payment after Tax: " + total_price);
+        } else {
+            document.write("<br>Total Payment: " + total_price);
+        }
+    </script>
+</body>
